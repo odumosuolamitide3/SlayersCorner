@@ -931,9 +931,12 @@ footer {
   .discount-float {
     left: 0;
     top: 10px;
+    height: 50px;
+    display: none;
   }
   .card-float {
-    display: none;
+    top: -30px;
+
   }
   .fac-grid {
     grid-template-columns: 1fr 1fr;
