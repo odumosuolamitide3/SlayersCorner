@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibadan City Spa · Slayers Corner</title>
+  <!-- Google Fonts (Manrope + Cormorant Garamond) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Pure CSS (separate style) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+    
+        <div class="brand-text">
+          <img src="./assets/images/logo.png" alt="logo" class="nav-logo">
+        </div>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#facilities">Facilities</a>
+        <a href="#facials">Facials</a>
+        <a href="#sculpting">Body Sculpting</a>
+        <a href="#injectables">Fillers &amp; Botox</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="tel:08133171271" class="btn btn-ghost">Call to book</a>
+        <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy reveal">
+        <span class="eyebrow-chip"><span class="dot"></span> Unisex spa &amp; wellness lounge, Ibadan</span>
+        <h1>Your <em>heaven</em> for body and soul.</h1>
+        <p class="lede">Facials, body sculpting, IV drips, fillers, nails and lashes — all under one roof at Ibadan City Spa by Slayers Corner. Come in tired, walk out glowing.</p>
+        <div class="hero-actions">
+          <a href="tel:08133171271" class="btn btn-primary">Book an appointment</a>
+          <a href="#contact" class="btn btn-ghost">Get directions</a>
+        </div>
+        <div class="hero-locations">
+          <div>
+            <span class="pin"></span>
+            <div>
+              <strong>Shop 1 — Dikat, Ring Road</strong>
+              <small>Ring road bus stop, opposite Dove fuel station, after Mauve 21, on your way to Challenge.</small>
+            </div>
+          </div>
+          <div>
+            <span class="pin"></span>
+            <div>
+              <strong>Shop 2 — Jogor Hotel area</strong>
+              <small>Liberty Road, off High Court Ring Road, Ibadan.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <!-- Replace circles with a spa-like image (pure CSS placeholder) -->
+        <div class="hero-image">
+            <img src="https://images.pexels.com/photos/11707459/pexels-photo-11707459.jpeg" alt="">
+        </div>
+        <div class="discount-float">
+          <div class="num">10%</div>
+          <div class="lbl">DISCOUNT SITEWIDE</div>
+        </div>
+        <div class="card-float">
+          <strong>Vampire Facial</strong>
+          <small>From ₦50,000 · restores glow &amp; radiance</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Beauty &amp; wellness, <em style="color:var(--maroon)">done properly.</em></h2>
+        <p>From regular facials to full body sculpting and injectables, every treatment is priced clearly and backed by a team that treats your skin like their own.</p>
+      </div>
+      <div class="stat-cards reveal-stagger">
+        <div class="stat-card"><div class="big">10%</div><p>Discount currently running across every treatment on the menu.</p></div>
+        <div class="stat-card alt"><div class="big">2</div><p>Locations across Ibadan — Ring Road and the Jogor Hotel area.</p></div>
+        <div class="stat-card alt"><div class="big">150+</div><p>Facial, body, salon and injectable treatments to choose from.</p></div>
+        <div class="stat-card"><div class="big">₦3k</div><p>Manicures start from as little as ₦3,000 — pamper on any budget.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section class="facilities" id="facilities">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag"></span>
+        <h2>Everything under <em>one roof.</em></h2>
+        <p>A full menu of facilities so you never have to go anywhere else for a top-to-toe refresh.</p>
+      </div>
+      <div class="fac-grid reveal-stagger">
+        <div class="fac-card"><div class="fac-icon">✦</div><strong>Facials &amp; Peels</strong></div>
+        <div class="fac-card"><div class="fac-icon">◍</div><strong>Body Massage</strong></div>
+        <div class="fac-card"><div class="fac-icon">◐</div><strong>Body Sculpting</strong></div>
+        <div class="fac-card"><div class="fac-icon">✧</div><strong>Fillers &amp; Botox</strong></div>
+        <div class="fac-card"><div class="fac-icon">⬡</div><strong>Skin Treatments</strong></div>
+        <div class="fac-card"><div class="fac-icon">◇</div><strong>IV &amp; IM Drips</strong></div>
+        <div class="fac-card"><div class="fac-icon">♦</div><strong>Unisex Salon</strong></div>
+        <div class="fac-card"><div class="fac-icon">❀</div><strong>Nail Lounge</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING: DRIPS -->
+  <section class="pricing" id="drips">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag"></span>
+        <h2>IV's &amp; IM's spa <em>drips.</em></h2>
+        <p>Glow, brighten and reset from the inside out.</p>
+      </div>
+      <div class="price-groups reveal">
+        <div class="price-card">
+          <div class="price-card-head"><h3>Slay Drips</h3><span>10% OFF</span></div>
+          <div class="price-list">
+            <div class="price-row"><span class="name">Glow up &amp; slay</span><span class="amt">₦60,000</span></div>
+            <div class="price-row"><span class="name">Fairy white up &amp; slay</span><span class="amt">₦150,000</span></div>
+            <div class="price-row"><span class="name">Yellow tone &amp; slay</span><span class="amt">₦100,000</span></div>
+            <div class="price-row"><span class="name">BB Glow &amp; slay</span><span class="amt">₦100,000</span></div>
+            <div class="price-row"><span class="name">Skinny drips / weight loss drips</span><span class="amt">₦100,000</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING: FACIALS + BODY -->
+  <section class="pricing" id="facials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag"></span>
+        <h2>Facials, peels <em>&amp; body care.</em></h2>
+        <p>Face treatments and body pampering, priced individually so you build your own visit.</p>
+      </div>
+      <div class="price-grid-2 reveal-stagger">
+        <div class="price-card">
+          <div class="price-card-head"><h3>Facials &amp; Peels</h3><span>FACE</span></div>
+          <div class="price-list">
+            <div class="price-row"><span class="name">Regular facials</span><span class="amt">₦15,000</span></div>
+            <div class="price-row"><span class="name">Acne treatment facials</span><span class="amt">₦30,000</span></div>
+            <div class="price-row"><span class="name">Anti-ageing facials</span><span class="amt">₦30,000</span></div>
+            <div class="price-row"><span class="name">Infusion facials</span><span class="amt">₦50,000</span></div>
+            <div class="price-row"><span class="name">Vampire facials</span><span class="amt">₦100,000</span></div>
+            <div class="price-row"><span class="name">Chemical peels</span><span class="amt">₦150,000</span></div>
+            <div class="price-row"><span class="name">Herbal peel</span><span class="amt">₦150,000</span></div>
+            <div class="price-row"><span class="name">Hollywood facials (carbon peel)</span><span class="amt">₦80,000</span></div>
+            <div class="price-row"><span class="name">BB glow facials</span><span class="amt">₦160,000</span></div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-head"><h3>Body &amp; Nails</h3><span>BODY</span></div>
+          <div class="price-list">
+            <div class="price-row"><span class="name">pedicure</span><span class="amt">₦10,000</span></div>
+            <div class="price-row"><span class="name">manicure</span><span class="amt">₦3,000</span></div>
+            <div class="price-row"><span class="name">Waxing per area</span><span class="amt">₦20,000</span></div>
+            <div class="price-row"><span class="name">Swedish body massage</span><span class="amt">₦25,000</span></div>
+            <div class="price-row"><span class="name">Deep tissue body massage</span><span class="amt">₦30,000</span></div>
+            <div class="price-row"><span class="name">Body exfoliation &amp; polishing</span><span class="amt">₦40,000</span></div>
+            <div class="price-row"><span class="name">Swana per 20mins</span><span class="amt">₦10,000</span></div>
+            <div class="price-row"><span class="name">Hot Stone massage</span><span class="amt">₦40,000</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCULPTING -->
+  <section class="pricing" id="sculpting">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag"></span>
+        <h2>Body <em>sculpting.</em></h2>
+        <p>Contouring and enhancement treatments, all performed with PRP where noted.</p>
+      </div>
+      <div class="price-groups reveal">
+        <div class="price-card">
+          <div class="price-card-head"><h3>Sculpting &amp; PRP</h3><span>SCULPT</span></div>
+          <div class="price-list">
+            <div class="price-row"><span class="name">Wood cavitation</span><span class="amt">₦30,000</span></div>
+            <div class="price-row"><span class="name">Lipo cavitation</span><span class="amt">₦40,000</span></div>
+            <div class="price-row"><span class="name">Lipolysis shots</span><span class="amt">₦100,000</span></div>
+            <div class="price-row"><span class="name">Bust enlargement with PRP only</span><span class="amt">₦300,000</span></div>
+            <div class="price-row"><span class="name">Bum enlargement with PRP only</span><span class="amt">₦400,000</span></div>
+            <div class="price-row"><span class="name">Hip dip fillers with PRP</span><span class="amt">₦500,000</span></div>
+            <div class="price-row"><span class="name">Lip fillers with PRP</span><span class="amt">₦200,000</span></div>
+            <div class="price-row"><span class="name">Under eye fillers with PRP</span><span class="amt">₦100,000</span></div>
+            <div class="price-row"><span class="name">Nasolabial fillers with PRP</span><span class="amt">₦150,000</span></div>
+            <div class="price-row"><span class="name">Labia/vulva fillers with PRP</span><span class="amt">₦150,000</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INJECTABLES + SALON -->
+  <section class="pricing" id="injectables">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag"></span>
+        <h2>Skin treatments, <em>fillers &amp; salon.</em></h2>
+        <p>Advanced skin therapy and injectables, plus the unisex salon and nail lounge.</p>
+      </div>
+      <div class="price-grid-2 reveal-stagger">
+        <div class="price-card">
+          <div class="price-card-head"><h3>Skin &amp; Injectables</h3><span>ADVANCED</span></div>
+          <div class="price-list">
+            <div class="price-row"><span class="name">Vericose veins treatment</span><span class="amt">₦200,000</span></div>
+            <div class="price-row"><span class="name">Ulteraphy</span><span class="amt">₦200,000</span></div>
+            <div class="price-row"><span class="name">Skin tag removal</span><span class="amt">₦200,000</span></div>
+            <div class="price-row"><span class="name">Scleroteraphy</span><span class="amt">₦180,000</span></div>
+            <div class="price-row"><span class="name">Carbon peel</span><span class="amt">₦80,000</span></div>
+            <div class="price-row"><span class="name">Skin rejuvenation</span><span class="amt">₦60,000</span></div>
+             <div class="price-row"><span class="name">Electrolysis hair removal</span><span class="amt">₦200,000</span></div>
+            <div class="price-row"><span class="name">Derma-fillers / Botox</span><span class="amt">₦200,000</span></div>
+            <div class="price-row"><span class="name">PDO / Threadlifts</span><span class="amt">₦150,000</span></div>
+            <div class="price-row"><span class="name">Micro-needling</span><span class="amt">₦100,000</span></div>
+            <div class="price-row"><span class="name">Mesotherapy</span><span class="amt">₦100,000</span></div>
+            <div class="price-row"><span class="name">O Shots</span><span class="amt">₦200,000</span></div>
+            <div class="price-row"><span class="name">P Shots</span><span class="amt">₦250,000</span></div>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-card-head"><h3>Unisex Salon &amp; Nail Lounge</h3><span>SALON</span></div>
+          <div class="price-list">
+            <div class="price-row"><span class="name">Semi-permanent lashes</span><span class="amt">₦20,000-₦40,000</span></div>
+            <div class="price-row"><span class="name">Microblading</span><span class="amt">₦80,000</span></div>
+            <div class="price-row"><span class="name">Lip blush (pink lips)</span><span class="amt">₦150,000</span></div>
+            <div class="price-row"><span class="name">Nail lounge services</span><span class="amt">Ask in-store</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <div class="banner reveal">
+    <div class="banner-inner">
+      <div>
+        <h3>Everything above is 10% off, right now.</h3>
+        <p>Mention this page when you call to lock in the discount on any treatment.</p>
+      </div>
+      <a href="tel:08133171271" class="btn btn-primary banner-cta">Call 0813 317 1271</a>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag"></span>
+        <h2>Come see us, <em>or call ahead.</em></h2>
+        <p>Two locations across Ibadan — walk in or book your slot first.</p>
+      </div>
+      <div class="contact-grid reveal-stagger">
+        <div class="contact-card">
+          <h4>Talk to us</h4>
+          <div class="contact-line"><div class="ic">☎</div><div><strong>08133171271</strong><span>Call or WhatsApp to book</span></div></div>
+          <div class="contact-line"><div class="ic">☎</div><div><strong>08032183999</strong><span>Second line</span></div></div>
+          <div class="contact-line"><div class="ic">◎</div><div><strong>slayerscorner</strong><span>Find us on Google as Ibadan City Spa by Slayers Corner</span></div></div>
+          <div class="social-row">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="tel:08133171271">Call now</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h4>Find our shops</h4>
+          <div class="contact-line"><div class="ic">📍</div><div><strong>Shop 1 — Ring Road, Ibadan</strong><span>Dikat bus stop, ring road. Landmark: opposite Dove fuel station, after Mauve 21, on your way to Challenge.</span></div></div>
+          <div class="contact-line"><div class="ic">📍</div><div><strong>Shop 2 — Inside the premises of Jogor Hotel</strong><span>Liberty Road, off High Court Ring Road, Ibadan.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand"><strong>Ibadan City Spa</strong><p>Your heaven for body and soul — facials, sculpting, drips and salon care across two Ibadan locations.</p></div>
+        <div class="foot-cols">
+          <div class="foot-col">
+            <strong>Menu</strong>
+            <span>Facials &amp; Peels</span><span>Body Sculpting</span><span>Fillers &amp; Botox</span><span>IV / IM Drips</span>
+          </div>
+          <div class="foot-col">
+            <strong>Visit</strong>
+            <span>Ring Road, Dikat</span><span>Jogor Hotel, Liberty Rd</span><span>0813 317 1271</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Ibadan City Spa by Slayers Corner.</span>
+        <span>10% discount running now — call to book.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile nav toggle
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      navLinks.classList.toggle('mobile-open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      navLinks.classList.remove('mobile-open');
+    }));
+
+    // scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

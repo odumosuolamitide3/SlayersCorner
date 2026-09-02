@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibadan City Spa by Slayers Corner — Your Heaven for Body and Soul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF1EA;
+    --cream-2:#F6E4DC;
+    --maroon:#5C1524;
+    --maroon-deep:#3C0D17;
+    --maroon-mid:#7A2233;
+    --clay:#D98F6C;
+    --gold:#B98A34;
+    --ink:#2B1512;
+    --ink-soft:#6E5750;
+    --white:#FFFFFF;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:10px;
+    --shadow: 0 20px 45px -20px rgba(60,13,23,0.35);
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    color:var(--maroon-deep);
+    margin:0;
+  }
+  p{ line-height:1.65; color:var(--ink-soft); margin:0; }
+  a{ text-decoration:none; color:inherit; }
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+  section{ position:relative; }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 clamp(20px,5vw,64px);
+  }
+  ::selection{ background:var(--clay); color:var(--white); }
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .8s var(--ease), transform .8s var(--ease);
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-stagger > *{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .7s var(--ease), transform .7s var(--ease);
+  }
+  .reveal-stagger.in > *{ opacity:1; transform:translateY(0); }
+  .reveal-stagger.in > *:nth-child(1){transition-delay:.05s;}
+  .reveal-stagger.in > *:nth-child(2){transition-delay:.12s;}
+  .reveal-stagger.in > *:nth-child(3){transition-delay:.19s;}
+  .reveal-stagger.in > *:nth-child(4){transition-delay:.26s;}
+  .reveal-stagger.in > *:nth-child(5){transition-delay:.33s;}
+  .reveal-stagger.in > *:nth-child(6){transition-delay:.40s;}
+  .reveal-stagger.in > *:nth-child(7){transition-delay:.47s;}
+  .reveal-stagger.in > *:nth-child(8){transition-delay:.54s;}
+  .reveal-stagger.in > *:nth-child(9){transition-delay:.61s;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-stagger > *{ transition:none; opacity:1; transform:none; }
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:15px 30px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.95rem;
+    letter-spacing:.2px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s;
+  }
+  .btn-primary{
+    background:var(--maroon);
+    color:var(--white);
+    box-shadow:0 14px 30px -12px rgba(92,21,36,.65);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 34px -12px rgba(92,21,36,.75); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--maroon-deep);
+    border-color:rgba(92,21,36,.35);
+  }
+  .btn-ghost:hover{ background:rgba(92,21,36,.06); }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,241,234,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(92,21,36,.08);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    background:linear-gradient(135deg,var(--maroon),var(--clay));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--white); font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.2rem;
+  }
+  .brand-text{ line-height:1.1; }
+  .brand-text strong{ font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--maroon-deep); display:block; }
+  .brand-text span{ font-size:.68rem; letter-spacing:.06em; color:var(--ink-soft); }
+  .nav-links{ display:flex; gap:36px; align-items:center; }
+  .nav-links a{ font-size:.92rem; font-weight:600; color:var(--ink); position:relative; }
+  .nav-links a::after{
+    content:'';position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--clay);
+    transition:width .25s var(--ease);
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{ display:flex; align-items:center; gap:18px; }
+  .burger{ display:none; width:26px; height:20px; position:relative; cursor:pointer; background:none; border:none; }
+  .burger span{ position:absolute; left:0; width:100%; height:2px; background:var(--maroon-deep); transition:.3s; }
+  .burger span:nth-child(1){top:0;} .burger span:nth-child(2){top:9px;} .burger span:nth-child(3){top:18px;}
+  .burger.open span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
+  .burger.open span:nth-child(2){ opacity:0; }
+  .burger.open span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:88px 0 60px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow-chip{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:7px 16px; border-radius:999px;
+    background:var(--white); border:1px solid rgba(92,21,36,.15);
+    font-size:.78rem; font-weight:700; color:var(--maroon);
+    box-shadow:0 8px 20px -12px rgba(92,21,36,.3);
+  }
+  .eyebrow-chip .dot{ width:7px;height:7px;border-radius:50%; background:var(--gold); }
+  .hero h1{
+    font-size:clamp(2.6rem,5.4vw,4.2rem);
+    line-height:1.04;
+    margin:22px 0 20px;
+    font-style:italic;
+  }
+  .hero h1 em{ font-style:normal; color:var(--maroon); }
+  .hero p.lede{
+    font-size:1.08rem;
+    max-width:480px;
+    margin-bottom:30px;
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:34px; }
+  .hero-locations{ display:flex; gap:26px; flex-wrap:wrap; }
+  .hero-locations div{ display:flex; gap:10px; align-items:flex-start; max-width:230px; }
+  .pin{
+    flex:none; width:20px;height:20px;margin-top:2px;
+    border-radius:50% 50% 50% 0; background:var(--clay); transform:rotate(-45deg);
+  }
+  .hero-locations strong{ font-size:.85rem; color:var(--maroon-deep); display:block; }
+  .hero-locations small{ font-size:.78rem; color:var(--ink-soft); line-height:1.4; }
+
+  .hero-visual{ position:relative; height:460px; }
+  .blob{ position:absolute; border-radius:50%; filter:blur(0); }
+  .blob-1{
+    width:340px;height:340px; right:10px; top:10px;
+    background:radial-gradient(circle at 30% 30%, var(--clay), var(--maroon) 78%);
+    box-shadow:var(--shadow);
+  }
+  .blob-2{
+    width:150px;height:150px; left:0; bottom:30px;
+    background:var(--cream-2); border:1px solid rgba(92,21,36,.1);
+  }
+  .dot-grid{
+    position:absolute; width:90px; height:70px;
+    background-image:radial-gradient(var(--maroon-mid) 1.6px, transparent 1.6px);
+    background-size:12px 12px; opacity:.35;
+  }
+  .dot-grid.dg1{ top:-10px; left:20px; }
+  .dot-grid.dg2{ bottom:0; right:-10px; }
+  .discount-float{
+    position:absolute; top:36px; left:-10px;
+    background:var(--white); border-radius:var(--radius-md);
+    padding:16px 20px; box-shadow:var(--shadow);
+    text-align:center; z-index:3;
+    border:1px solid rgba(92,21,36,.08);
+  }
+  .discount-float .num{ font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--maroon); font-weight:700; line-height:1; }
+  .discount-float .lbl{ font-size:.68rem; letter-spacing:.08em; color:var(--ink-soft); }
+  .card-float{
+    position:absolute; bottom:26px; right:20px;
+    background:var(--white); border-radius:var(--radius-md);
+    padding:16px 18px; box-shadow:var(--shadow); width:210px; z-index:3;
+    border:1px solid rgba(92,21,36,.08);
+  }
+  .card-float strong{ font-size:.85rem; color:var(--maroon-deep); display:block; margin-bottom:3px; }
+  .card-float small{ font-size:.74rem; color:var(--ink-soft); }
+
+  /* ---------- stats band ---------- */
+  .stats{ padding:50px 0 70px; }
+  .stats .wrap{
+    display:grid; grid-template-columns:1fr 1.3fr; gap:48px; align-items:center;
+  }
+  .stats h2{ font-size:clamp(1.9rem,3.4vw,2.6rem); line-height:1.15; margin-bottom:14px; font-style:italic; }
+  .stats p{ max-width:380px; }
+  .stat-cards{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .stat-card{
+    background:linear-gradient(150deg,var(--maroon) 0%, var(--maroon-mid) 100%);
+    border-radius:var(--radius-lg);
+    padding:30px 26px;
+    color:var(--white);
+    box-shadow:var(--shadow);
+  }
+  .stat-card .big{ font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:600; }
+  .stat-card p{ color:rgba(255,255,255,.82); font-size:.85rem; margin-top:8px; }
+  .stat-card.alt{ background:var(--white); color:var(--maroon-deep); border:1px solid rgba(92,21,36,.12); }
+  .stat-card.alt .big{ color:var(--maroon); }
+  .stat-card.alt p{ color:var(--ink-soft); }
+
+  /* ---------- section headers ---------- */
+  .section-head{ text-align:left; max-width:620px; margin-bottom:44px; }
+  .section-head .tag{
+    display:inline-block; width:34px; height:3px; background:var(--clay); margin-bottom:16px; border-radius:2px;
+  }
+  .section-head h2{ font-size:clamp(1.9rem,3.6vw,2.7rem); font-style:italic; margin-bottom:10px; }
+  .section-head h2 em{ font-style:normal; color:var(--maroon); }
+
+  /* ---------- facilities icon grid ---------- */
+  .facilities{ padding:70px 0; }
+  .fac-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  .fac-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:30px 20px;
+    text-align:center;
+    border:1px solid rgba(92,21,36,.08);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .fac-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+  .fac-icon{
+    width:52px;height:52px; border-radius:50%; margin:0 auto 14px;
+    background:var(--cream-2); display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem;
+  }
+  .fac-card strong{ font-size:.92rem; color:var(--maroon-deep); }
+
+  /* ---------- pricing sections ---------- */
+  .pricing{ padding:30px 0 70px; }
+  .price-groups{ display:grid; gap:26px; }
+  .price-card{
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    border:1px solid rgba(92,21,36,.08);
+    overflow:hidden;
+  }
+  .price-card-head{
+    background:linear-gradient(120deg,var(--maroon) 0%, var(--maroon-mid) 100%);
+    color:var(--white);
+    padding:22px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  .price-card-head h3{ color:var(--white); font-size:1.4rem; font-style:italic; }
+  .price-card-head span{ font-size:.72rem; letter-spacing:.06em; color:rgba(255,255,255,.75); }
+  .price-list{ padding:10px 28px 22px; }
+  .price-row{
+    display:flex; justify-content:space-between; gap:16px;
+    padding:13px 0;
+    border-bottom:1px dashed rgba(92,21,36,.14);
+    font-size:.94rem;
+  }
+  .price-row:last-child{ border-bottom:none; }
+  .price-row .name{ color:var(--ink); font-weight:600; }
+  .price-row .amt{ color:var(--maroon); font-weight:700; white-space:nowrap; }
+
+  .price-grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+
+  /* ---------- discount banner ---------- */
+  .banner{
+    margin:20px auto 80px;
+    max-width:1180px;
+    padding:0 clamp(20px,5vw,64px);
+  }
+  .banner-inner{
+    background:radial-gradient(120% 180% at 10% 0%, var(--maroon-mid), var(--maroon-deep) 70%);
+    border-radius:var(--radius-lg);
+    padding:48px clamp(24px,6vw,64px);
+    display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+    color:var(--white);
+    box-shadow:var(--shadow);
+    position:relative; overflow:hidden;
+  }
+  .banner-inner::after{
+    content:''; position:absolute; width:280px; height:280px; border-radius:50%;
+    background:rgba(217,143,108,.28); right:-90px; top:-90px;
+  }
+  .banner-inner h3{ color:var(--white); font-size:clamp(1.6rem,3vw,2.2rem); font-style:italic; position:relative; z-index:1; }
+  .banner-inner p{ color:rgba(255,255,255,.82); max-width:420px; position:relative; z-index:1; }
+  .banner-cta{ position:relative; z-index:1; }
+
+  /* ---------- contact ---------- */
+  .contact{ padding:20px 0 90px; }
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:24px;
+  }
+  .contact-card{
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    border:1px solid rgba(92,21,36,.08);
+    padding:32px;
+  }
+  .contact-card h4{
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.35rem; color:var(--maroon-deep); margin-bottom:16px;
+  }
+  .contact-line{ display:flex; gap:12px; margin-bottom:14px; align-items:flex-start; }
+  .contact-line .ic{
+    flex:none; width:34px;height:34px;border-radius:50%; background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center; font-size:.9rem;
+  }
+  .contact-line strong{ display:block; font-size:.92rem; color:var(--ink); }
+  .contact-line span{ font-size:.84rem; color:var(--ink-soft); }
+  .social-row{ display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; }
+  .social-row a{
+    padding:9px 16px; border-radius:999px; background:var(--cream-2);
+    font-size:.8rem; font-weight:700; color:var(--maroon-deep);
+    transition:background .25s;
+  }
+  .social-row a:hover{ background:var(--clay); color:var(--white); }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--maroon-deep);
+    color:rgba(255,255,255,.75);
+    padding:52px 0 26px;
+  }
+  .foot-top{
+    display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:36px;
+  }
+  .foot-brand strong{ font-family:'Cormorant Garamond',serif; color:var(--white); font-size:1.3rem; font-style:italic; }
+  .foot-brand p{ color:rgba(255,255,255,.6); max-width:280px; margin-top:10px; font-size:.85rem; }
+  .foot-cols{ display:flex; gap:60px; flex-wrap:wrap; }
+  .foot-col strong{ color:var(--white); font-size:.82rem; letter-spacing:.05em; display:block; margin-bottom:12px; }
+  .foot-col span{ display:block; font-size:.85rem; margin-bottom:8px; color:rgba(255,255,255,.65); }
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding-top:20px; font-size:.78rem; color:rgba(255,255,255,.5);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:960px){
+    .hero .wrap{ grid-template-columns:1fr; }
+    .hero-visual{ height:340px; order:-1; }
+    .stats .wrap{ grid-template-columns:1fr; }
+    .fac-grid{ grid-template-columns:repeat(2,1fr); }
+    .price-grid-2{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:720px){
+    .nav-links, .nav-cta .btn-ghost{ display:none; }
+    .burger{ display:block; }
+    .nav-links.mobile-open{
+      display:flex; position:absolute; top:100%; left:0; right:0;
+      background:var(--cream); flex-direction:column; padding:20px clamp(20px,5vw,64px) 26px;
+      gap:16px; border-bottom:1px solid rgba(92,21,36,.1);
+    }
+    .hero{ padding-top:26px; }
+    .discount-float{ left:0; top:10px; }
+    .card-float{ display:none; }
+    .fac-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:520px){
+    .hero-locations{ flex-direction:column; gap:16px; }
+    .fac-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+    .banner-inner{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      <div class="brand-text">
+        <strong>Ibadan City Spa</strong>
+        <span>BY SLAYERS CORNER</span>
+      </div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#facilities">Facilities</a>
+      <a href="#facials">Facials</a>
+      <a href="#sculpting">Body Sculpting</a>
+      <a href="#injectables">Fillers &amp; Botox</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:08133171271" class="btn btn-ghost">Call to book</a>
+      <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <span class="eyebrow-chip"><span class="dot"></span> Unisex spa &amp; wellness lounge, Ibadan</span>
+      <h1>Your <em>heaven</em> for body and soul.</h1>
+      <p class="lede">Facials, body sculpting, IV drips, fillers, nails and lashes — all under one roof at Ibadan City Spa by Slayers Corner. Come in tired, walk out glowing.</p>
+      <div class="hero-actions">
+        <a href="tel:08133171271" class="btn btn-primary">Book an appointment</a>
+        <a href="#contact" class="btn btn-ghost">Get directions</a>
+      </div>
+      <div class="hero-locations">
+        <div>
+          <span class="pin"></span>
+          <div>
+            <strong>Shop 1 — Dikat, Ring Road</strong>
+            <small>Ring road bus stop, opposite Dove fuel station, after Mauve 21, on your way to Challenge.</small>
+          </div>
+        </div>
+        <div>
+          <span class="pin"></span>
+          <div>
+            <strong>Shop 2 — Jogor Hotel area</strong>
+            <small>Liberty Road, off High Court Ring Road, Ibadan.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="dot-grid dg1"></div>
+      <div class="dot-grid dg2"></div>
+      <div class="blob-2 blob"></div>
+      <div class="blob-1 blob"></div>
+      <div class="discount-float">
+        <div class="num">10%</div>
+        <div class="lbl">DISCOUNT SITEWIDE</div>
+      </div>
+      <div class="card-float">
+        <strong>Vampire Facial</strong>
+        <small>From ₦50,000 · restores glow &amp; radiance</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Beauty &amp; wellness, <em style="color:var(--maroon)">done properly.</em></h2>
+      <p>From regular facials to full body sculpting and injectables, every treatment is priced clearly and backed by a team that treats your skin like their own.</p>
+    </div>
+    <div class="stat-cards reveal-stagger">
+      <div class="stat-card">
+        <div class="big">10%</div>
+        <p>Discount currently running across every treatment on the menu.</p>
+      </div>
+      <div class="stat-card alt">
+        <div class="big">2</div>
+        <p>Locations across Ibadan — Ring Road and the Jogor Hotel area.</p>
+      </div>
+      <div class="stat-card alt">
+        <div class="big">30+</div>
+        <p>Facial, body, salon and injectable treatments to choose from.</p>
+      </div>
+      <div class="stat-card">
+        <div class="big">₦3k</div>
+        <p>Manicures start from as little as ₦3,000 — pamper on any budget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="facilities" id="facilities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"></span>
+      <h2>Everything under <em>one roof.</em></h2>
+      <p>A full menu of facilities so you never have to go anywhere else for a top-to-toe refresh.</p>
+    </div>
+    <div class="fac-grid reveal-stagger">
+      <div class="fac-card"><div class="fac-icon">✦</div><strong>Facials &amp; Peels</strong></div>
+      <div class="fac-card"><div class="fac-icon">◍</div><strong>Body Massage</strong></div>
+      <div class="fac-card"><div class="fac-icon">◐</div><strong>Body Sculpting</strong></div>
+      <div class="fac-card"><div class="fac-icon">✧</div><strong>Fillers &amp; Botox</strong></div>
+      <div class="fac-card"><div class="fac-icon">⬡</div><strong>Skin Treatments</strong></div>
+      <div class="fac-card"><div class="fac-icon">◇</div><strong>IV &amp; IM Drips</strong></div>
+      <div class="fac-card"><div class="fac-icon">♦</div><strong>Unisex Salon</strong></div>
+      <div class="fac-card"><div class="fac-icon">❀</div><strong>Nail Lounge</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="drips">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"></span>
+      <h2>IV's &amp; IM's spa <em>drips.</em></h2>
+      <p>Glow, brighten and reset from the inside out.</p>
+    </div>
+    <div class="price-groups reveal">
+      <div class="price-card">
+        <div class="price-card-head">
+          <h3>Slay Drips</h3>
+          <span>10% OFF</span>
+        </div>
+        <div class="price-list">
+          <div class="price-row"><span class="name">Glow up &amp; slay</span><span class="amt">₦60,000</span></div>
+          <div class="price-row"><span class="name">Fairy white up &amp; slay</span><span class="amt">₦150,000</span></div>
+          <div class="price-row"><span class="name">Yellow tone &amp; slay</span><span class="amt">₦80,000</span></div>
+          <div class="price-row"><span class="name">BB Glow &amp; slay</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">Skinny drips / weight loss drips</span><span class="amt">₦100,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="facials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"></span>
+      <h2>Facials, peels <em>&amp; body care.</em></h2>
+      <p>Face treatments and body pampering, priced individually so you build your own visit.</p>
+    </div>
+    <div class="price-grid-2 reveal-stagger">
+      <div class="price-card">
+        <div class="price-card-head">
+          <h3>Facials &amp; Peels</h3>
+          <span>FACE</span>
+        </div>
+        <div class="price-list">
+          <div class="price-row"><span class="name">Regular facials</span><span class="amt">₦10,000</span></div>
+          <div class="price-row"><span class="name">Acne treatment facials</span><span class="amt">₦20,000</span></div>
+          <div class="price-row"><span class="name">Anti-ageing facials</span><span class="amt">₦20,000</span></div>
+          <div class="price-row"><span class="name">Infusion facials</span><span class="amt">₦30,000</span></div>
+          <div class="price-row"><span class="name">Vampire facials</span><span class="amt">₦50,000</span></div>
+          <div class="price-row"><span class="name">Chemical peels</span><span class="amt">₦50,000</span></div>
+          <div class="price-row"><span class="name">Herbal peel</span><span class="amt">₦60,000</span></div>
+          <div class="price-row"><span class="name">Hollywood facials (carbon peel)</span><span class="amt">₦80,000</span></div>
+          <div class="price-row"><span class="name">BB glow facials</span><span class="amt">₦80,000</span></div>
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="price-card-head">
+          <h3>Body &amp; Nails</h3>
+          <span>BODY</span>
+        </div>
+        <div class="price-list">
+          <div class="price-row"><span class="name">Manicure</span><span class="amt">₦3,000</span></div>
+          <div class="price-row"><span class="name">Pedicure</span><span class="amt">₦10,000</span></div>
+          <div class="price-row"><span class="name">Waxing</span><span class="amt">₦20,000</span></div>
+          <div class="price-row"><span class="name">Swedish body massage</span><span class="amt">₦25,000</span></div>
+          <div class="price-row"><span class="name">Deep tissue body massage</span><span class="amt">₦30,000</span></div>
+          <div class="price-row"><span class="name">Body exfoliation &amp; polishing</span><span class="amt">₦30,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="sculpting">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"></span>
+      <h2>Body <em>sculpting.</em></h2>
+      <p>Contouring and enhancement treatments, all performed with PRP where noted.</p>
+    </div>
+    <div class="price-groups reveal">
+      <div class="price-card">
+        <div class="price-card-head">
+          <h3>Sculpting &amp; PRP</h3>
+          <span>SCULPT</span>
+        </div>
+        <div class="price-list">
+          <div class="price-row"><span class="name">Wood cavitation</span><span class="amt">₦30,000</span></div>
+          <div class="price-row"><span class="name">Lipo cavitation</span><span class="amt">₦40,000</span></div>
+          <div class="price-row"><span class="name">Lipolysis shots</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">Bust enlargement with PRP only</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">Bum enlargement with PRP only</span><span class="amt">₦120,000</span></div>
+          <div class="price-row"><span class="name">Hip dip fillers with PRP</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">Lip fillers with PRP</span><span class="amt">₦80,000</span></div>
+          <div class="price-row"><span class="name">Under eye fillers with PRP</span><span class="amt">₦120,000</span></div>
+          <div class="price-row"><span class="name">Nasolabial fillers with PRP</span><span class="amt">₦60,000</span></div>
+          <div class="price-row"><span class="name">Labia/vulva fillers with PRP</span><span class="amt">₦100,000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="injectables">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"></span>
+      <h2>Skin treatments, <em>fillers &amp; salon.</em></h2>
+      <p>Advanced skin therapy and injectables, plus the unisex salon and nail lounge.</p>
+    </div>
+    <div class="price-grid-2 reveal-stagger">
+      <div class="price-card">
+        <div class="price-card-head">
+          <h3>Skin &amp; Injectables</h3>
+          <span>ADVANCED</span>
+        </div>
+        <div class="price-list">
+          <div class="price-row"><span class="name">Venous veins treatment</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">Ulteraphy</span><span class="amt">₦50,000</span></div>
+          <div class="price-row"><span class="name">Skin tag removal</span><span class="amt">₦40,000</span></div>
+          <div class="price-row"><span class="name">Scleroteraphy</span><span class="amt">₦160,000</span></div>
+          <div class="price-row"><span class="name">Carbon peel</span><span class="amt">₦80,000</span></div>
+          <div class="price-row"><span class="name">Skin rejuvenation</span><span class="amt">₦80,000</span></div>
+          <div class="price-row"><span class="name">Derma-fillers / Botox</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">PDO / Threadlifts</span><span class="amt">₦150,000</span></div>
+          <div class="price-row"><span class="name">Micro-needling</span><span class="amt">₦50,000</span></div>
+          <div class="price-row"><span class="name">Mesotherapy</span><span class="amt">₦50,000</span></div>
+          <div class="price-row"><span class="name">O Shots</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">P Shots</span><span class="amt">₦120,000</span></div>
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="price-card-head">
+          <h3>Unisex Salon &amp; Nail Lounge</h3>
+          <span>SALON</span>
+        </div>
+        <div class="price-list">
+          <div class="price-row"><span class="name">Semi-permanent lashes</span><span class="amt">Ask in-store</span></div>
+          <div class="price-row"><span class="name">Microblading</span><span class="amt">Ask in-store</span></div>
+          <div class="price-row"><span class="name">Lip blush (pink lips)</span><span class="amt">₦100,000</span></div>
+          <div class="price-row"><span class="name">Nail lounge services</span><span class="amt">Ask in-store</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banner reveal">
+  <div class="banner-inner">
+    <div>
+      <h3>Everything above is 10% off, right now.</h3>
+      <p>Mention this page when you call to lock in the discount on any treatment.</p>
+    </div>
+    <a href="tel:08133171271" class="btn btn-primary banner-cta" style="background:var(--white);color:var(--maroon-deep);">Call 0813 317 1271</a>
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag"></span>
+      <h2>Come see us, <em>or call ahead.</em></h2>
+      <p>Two locations across Ibadan — walk in or book your slot first.</p>
+    </div>
+    <div class="contact-grid reveal-stagger">
+      <div class="contact-card">
+        <h4>Talk to us</h4>
+        <div class="contact-line">
+          <div class="ic">☎</div>
+          <div><strong>08133171271</strong><span>Call or WhatsApp to book</span></div>
+        </div>
+        <div class="contact-line">
+          <div class="ic">☎</div>
+          <div><strong>08032183999</strong><span>Second line</span></div>
+        </div>
+        <div class="contact-line">
+          <div class="ic">◎</div>
+          <div><strong>slayerscorner</strong><span>Find us on Google as Ibadan City Spa by Slayers Corner</span></div>
+        </div>
+        <div class="social-row">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="tel:08133171271">Call now</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>Find our shops</h4>
+        <div class="contact-line">
+          <div class="ic">📍</div>
+          <div><strong>Shop 1 — Ring Road, Ibadan</strong><span>Dikat bus stop, ring road. Landmark: opposite Dove fuel station, after Mauve 21, on your way to Challenge.</span></div>
+        </div>
+        <div class="contact-line">
+          <div class="ic">📍</div>
+          <div><strong>Shop 2 — Jogor Hotel area</strong><span>Liberty Road, off High Court Ring Road, Ibadan.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <strong>Ibadan City Spa</strong>
+        <p>Your heaven for body and soul — facials, sculpting, drips and salon care across two Ibadan locations.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <strong>Menu</strong>
+          <span>Facials &amp; Peels</span>
+          <span>Body Sculpting</span>
+          <span>Fillers &amp; Botox</span>
+          <span>IV / IM Drips</span>
+        </div>
+        <div class="foot-col">
+          <strong>Visit</strong>
+          <span>Ring Road, Dikat</span>
+          <span>Jogor Hotel, Liberty Rd</span>
+          <span>0813 317 1271</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Ibadan City Spa by Slayers Corner.</span>
+      <span>10% discount running now — call to book.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('mobile-open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navLinks.classList.remove('mobile-open');
+  }));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
