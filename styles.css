@@ -175,7 +175,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  padding: 18px 20px;
 }
 
 .brand {
@@ -903,6 +903,9 @@ footer {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+  .nav{
+    padding-right: 20px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -941,6 +944,9 @@ footer {
   .fac-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .nav{
+    padding-right: 20px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -955,5 +961,8 @@ footer {
   .banner-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .nav{
+    padding-right: 20px;
   }
 }
